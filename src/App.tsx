@@ -7,8 +7,15 @@ import "./App.css";
 const TOTAL_PAIRS = 8;
 
 export const App: React.FC = () => {
- const { cards, moves, matchedPairs, bestScore, handleCardClick, resetGame } =
-  useMemoryGame({ totalPairs: TOTAL_PAIRS });
+ const {
+  cards,
+  moves,
+  matchedPairs,
+  bestScore,
+  isGameReady,
+  handleCardClick,
+  resetGame,
+ } = useMemoryGame({ totalPairs: TOTAL_PAIRS });
 
  return (
   <div className="app">
@@ -21,7 +28,11 @@ export const App: React.FC = () => {
    />
 
    <main className="game-container">
-    <CardGrid cards={cards} onCardClick={handleCardClick} />
+    <CardGrid
+     cards={cards}
+     onCardClick={handleCardClick}
+     isGameReady={isGameReady}
+    />
    </main>
 
    {matchedPairs === TOTAL_PAIRS && matchedPairs > 0 && (

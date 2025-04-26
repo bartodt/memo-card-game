@@ -5,9 +5,14 @@ import "./Card.css";
 interface CardProps {
  card: CardType;
  onClick: (id: number) => void;
+ isGameReady?: boolean;
 }
 
-export const Card: React.FC<CardProps> = ({ card, onClick }) => {
+export const Card: React.FC<CardProps> = ({
+ card,
+ onClick,
+ isGameReady = true,
+}) => {
  const { id, isFlipped, isMatched, value } = card;
 
  const handleClick = () => {
@@ -20,6 +25,7 @@ export const Card: React.FC<CardProps> = ({ card, onClick }) => {
   "memory-card",
   isFlipped ? "flipped" : "",
   isMatched ? "matched" : "",
+  !isGameReady ? "disabled" : "",
  ]
   .filter(Boolean)
   .join(" ");

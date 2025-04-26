@@ -14,6 +14,7 @@ interface UseMemoryGameReturn {
  bestScore: number | null;
  handleCardClick: (id: number) => void;
  resetGame: () => void;
+ isGameReady: boolean;
 }
 
 export function useMemoryGame({
@@ -24,28 +25,48 @@ export function useMemoryGame({
  const [moves, setMoves] = useState(0);
  const [matchedPairs, setMatchedPairs] = useState(0);
  const [bestScore, setBestScore] = useState<number | null>(null);
+ const [isGameReady, setIsGameReady] = useState(false);
 
  // Initialize the game
  const initializeGame = useCallback(() => {
   // Create pairs of cards
   const values = Array.from({ length: totalPairs }, (_, i) => i + 1);
   const cardPairs = values.flatMap((value) => [
-   { id: value * 2 - 1, value, isFlipped: true, isMatched: false },
-   { id: value * 2, value, isFlipped: true, isMatched: false },
+   { id: value * 2 - 1, value, isFlipped: false, isMatched: false },
+   { id: value * 2, value, isFlipped: false, isMatched: false },
   ]);
 
-  // Shuffle cards
+  // Shuffle cards and reset the game
   setCards(shuffleArray(cardPairs));
   setFlippedCards([]);
   setMoves(0);
   setMatchedPairs(0);
+  setIsGameReady(false);
 
-  // Flip cards back after preview
+  // Adjust times:
+  // 1. Time for all cards to be dealt (last card + animation)
+  const lastCardDelay = 0.85; // seconds (delay of last card)
+  const dealAnimationDuration = 0.8; // seconds (animation duration)
+  const dealingCompleteTime = (lastCardDelay + dealAnimationDuration) * 1000;
+
+  // 2. Time to show the flipped cards showing their values
+  const previewDuration = 3000; // 3 seconds
+
+  // Step 1: Wait for the deal animation to complete
   setTimeout(() => {
+   // Step 2: Flip all cards to show their values
    setCards((prevCards) =>
-    prevCards.map((card) => ({ ...card, isFlipped: false }))
+    prevCards.map((card) => ({ ...card, isFlipped: true }))
    );
-  }, 2000);
+
+   // Step 3: After the preview time, hide the cards to start the game
+   setTimeout(() => {
+    setCards((prevCards) =>
+     prevCards.map((card) => ({ ...card, isFlipped: false }))
+    );
+    setIsGameReady(true);
+   }, previewDuration);
+  }, dealingCompleteTime);
  }, [totalPairs]);
 
  useEffect(() => {
@@ -110,6 +131,8 @@ export function useMemoryGame({
 
  const handleCardClick = useCallback(
   (id: number) => {
+   if (!isGameReady) return;
+
    // Ignore clicks if two cards are already flipped
    if (flippedCards.length === 2) return;
 
@@ -134,7 +157,7 @@ export function useMemoryGame({
     setMoves((prev) => prev + 1);
    }
   },
-  [cards, flippedCards]
+  [cards, flippedCards, isGameReady]
  );
 
  const resetGame = useCallback(() => {
@@ -149,5 +172,6 @@ export function useMemoryGame({
   bestScore,
   handleCardClick,
   resetGame,
+  isGameReady,
  };
 }

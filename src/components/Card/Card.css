@@ -11,6 +11,15 @@
  transform: translateY(-5px);
 }
 
+.memory-card.disabled {
+ cursor: default;
+ pointer-events: none;
+}
+
+.memory-card.disabled:hover {
+ transform: none;
+}
+
 .card-inner {
  width: 100%;
  height: 100%;
