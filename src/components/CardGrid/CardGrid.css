@@ -9,31 +9,29 @@
  perspective: 1000px;
  position: relative;
  z-index: 1;
+ overflow: hidden;
 }
 
 .card-grid > * {
  opacity: 0;
  animation: dealCard 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
  transform-origin: center center;
+ position: relative;
 }
 
 @keyframes dealCard {
  0% {
   opacity: 0;
-  transform: translate(-50%, -50%) scale(0.1) rotate(-10deg);
-  position: absolute;
-  top: 100%;
-  left: 100%;
+  transform: translateY(100px) scale(0.1) rotate(-10deg);
+  visibility: visible;
  }
  30% {
   opacity: 1;
  }
  100% {
   opacity: 1;
-  transform: translate(0, 0) scale(1) rotate(0);
-  position: relative;
-  top: auto;
-  left: auto;
+  transform: translateY(0) scale(1) rotate(0);
+  visibility: visible;
  }
 }
 
