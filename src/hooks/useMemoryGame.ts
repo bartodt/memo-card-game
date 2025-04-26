@@ -30,8 +30,8 @@ export function useMemoryGame({
   // Create pairs of cards
   const values = Array.from({ length: totalPairs }, (_, i) => i + 1);
   const cardPairs = values.flatMap((value) => [
-   { id: value * 2 - 1, value, isFlipped: false, isMatched: false },
-   { id: value * 2, value, isFlipped: false, isMatched: false },
+   { id: value * 2 - 1, value, isFlipped: true, isMatched: false },
+   { id: value * 2, value, isFlipped: true, isMatched: false },
   ]);
 
   // Shuffle cards
@@ -39,6 +39,13 @@ export function useMemoryGame({
   setFlippedCards([]);
   setMoves(0);
   setMatchedPairs(0);
+
+  // Flip cards back after preview
+  setTimeout(() => {
+   setCards((prevCards) =>
+    prevCards.map((card) => ({ ...card, isFlipped: false }))
+   );
+  }, 2000);
  }, [totalPairs]);
 
  useEffect(() => {
