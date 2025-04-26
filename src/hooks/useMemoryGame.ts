@@ -84,7 +84,12 @@ export function useMemoryGame({
      )
     );
     setMatchedPairs((prev) => prev + 1);
-    setFlippedCards([]);
+
+    const matchTimeout = setTimeout(() => {
+     setFlippedCards([]);
+    }, 800);
+
+    return () => clearTimeout(matchTimeout);
    } else {
     // No match, flip back after delay
     const timeout = setTimeout(() => {

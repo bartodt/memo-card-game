@@ -5,14 +5,14 @@
  color: white;
  border-radius: 16px;
  margin-bottom: 25px;
- box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+ box-shadow: 0 10px 30px var(--shadow-medium);
 }
 
 .game-header h1 {
  margin: 0 0 20px 0;
  font-size: 36px;
  font-weight: 700;
- text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+ text-shadow: 2px 2px 5px var(--shadow-dark);
  letter-spacing: 1px;
 }
 
@@ -27,17 +27,17 @@
  display: flex;
  flex-direction: column;
  align-items: center;
- background-color: rgba(255, 255, 255, 0.2);
+ background-color: var(--overlay-medium);
  padding: 12px 20px;
  border-radius: 12px;
  backdrop-filter: blur(5px);
  transition: transform 0.3s, box-shadow 0.3s;
- box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+ box-shadow: 0 5px 15px var(--shadow-light);
 }
 
 .stat:hover {
  transform: translateY(-3px);
- box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+ box-shadow: 0 8px 20px var(--shadow-medium);
 }
 
 .stat-label {
@@ -54,7 +54,7 @@
 }
 
 .reset-button {
- background: linear-gradient(to right, var(--error), #ff7675);
+ background: linear-gradient(to right, var(--error), var(--error-light));
  color: white;
  border: none;
  padding: 12px 25px;
@@ -63,13 +63,13 @@
  font-size: 16px;
  font-weight: 600;
  transition: transform 0.3s, box-shadow 0.3s;
- box-shadow: 0 5px 15px rgba(214, 48, 49, 0.3);
+ box-shadow: 0 5px 15px var(--shadow-darker);
  letter-spacing: 0.5px;
 }
 
 .reset-button:hover {
  transform: translateY(-3px);
- box-shadow: 0 8px 20px rgba(214, 48, 49, 0.4);
+ box-shadow: 0 8px 20px var(--shadow-dark);
 }
 
 @media (max-width: 600px) {

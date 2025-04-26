@@ -5,19 +5,40 @@
 }
 
 :root {
+ /* Colores principales */
  --primary: #6c5ce7;
+ --primary-light: #a29bfe;
  --secondary: #a29bfe;
  --accent: #00cec9;
  --light: #f8f9fa;
  --dark: #2d3436;
  --success: #00b894;
+ --success-light: #a3f9c6;
  --error: #d63031;
+ --error-light: #ff7675;
+
+ /* Colores adicionales */
+ --gold: #ffeaa7;
+ --card-back: #dfe6e9;
+
+ /* Sombras */
+ --shadow-light: rgba(0, 0, 0, 0.1);
+ --shadow-medium: rgba(0, 0, 0, 0.15);
+ --shadow-dark: rgba(0, 0, 0, 0.2);
+ --shadow-darker: rgba(0, 0, 0, 0.3);
+ --shadow-modal: rgba(0, 0, 0, 0.8);
+
+ /* Overlay */
+ --overlay-light: rgba(255, 255, 255, 0.1);
+ --overlay-medium: rgba(255, 255, 255, 0.2);
+
+ /* Tamaños */
  --card-size: 100px;
 }
 
 body {
  font-family: "Poppins", "Segoe UI", "Roboto", sans-serif;
- background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+ background: linear-gradient(135deg, var(--primary), var(--secondary));
  min-height: 100vh;
  color: var(--light);
  line-height: 1.6;
@@ -32,10 +53,10 @@ body {
 
 .game-container {
  padding: 20px;
- background-color: rgba(255, 255, 255, 0.1);
+ background-color: var(--overlay-light);
  backdrop-filter: blur(10px);
  border-radius: 16px;
- box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+ box-shadow: 0 8px 30px var(--shadow-dark);
  margin-top: 20px;
 }
 
@@ -45,7 +66,7 @@ body {
  left: 0;
  right: 0;
  bottom: 0;
- background-color: rgba(0, 0, 0, 0.8);
+ background-color: var(--shadow-modal);
  backdrop-filter: blur(8px);
  display: flex;
  flex-direction: column;
@@ -65,7 +86,7 @@ body {
  -webkit-background-clip: text;
  background-clip: text;
  color: transparent;
- text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+ text-shadow: 0 2px 10px var(--shadow-light);
 }
 
 .win-message p {
@@ -74,7 +95,7 @@ body {
 }
 
 .win-message .new-record {
- color: #ffeaa7;
+ color: var(--gold);
  font-weight: bold;
  font-size: 28px;
  animation: pulse 1.5s infinite;
@@ -91,12 +112,12 @@ body {
  font-weight: 600;
  cursor: pointer;
  transition: transform 0.3s, box-shadow 0.3s;
- box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+ box-shadow: 0 6px 20px var(--shadow-medium);
 }
 
 .win-message button:hover {
  transform: translateY(-5px);
- box-shadow: 0 10px 25px rgba(108, 92, 231, 0.6);
+ box-shadow: 0 10px 25px var(--shadow-dark);
 }
 
 @keyframes fadeIn {
