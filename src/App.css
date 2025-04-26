@@ -4,10 +4,22 @@
  padding: 0;
 }
 
+:root {
+ --primary: #6c5ce7;
+ --secondary: #a29bfe;
+ --accent: #00cec9;
+ --light: #f8f9fa;
+ --dark: #2d3436;
+ --success: #00b894;
+ --error: #d63031;
+ --card-size: 100px;
+}
+
 body {
- font-family: "Segoe UI", "Roboto", sans-serif;
- background-color: #f5f7fa;
- color: #333;
+ font-family: "Poppins", "Segoe UI", "Roboto", sans-serif;
+ background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+ min-height: 100vh;
+ color: var(--light);
  line-height: 1.6;
 }
 
@@ -19,7 +31,12 @@ body {
 }
 
 .game-container {
- padding: 16px;
+ padding: 20px;
+ background-color: rgba(255, 255, 255, 0.1);
+ backdrop-filter: blur(10px);
+ border-radius: 16px;
+ box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+ margin-top: 20px;
 }
 
 .win-message {
@@ -28,7 +45,8 @@ body {
  left: 0;
  right: 0;
  bottom: 0;
- background-color: rgba(0, 0, 0, 0.7);
+ background-color: rgba(0, 0, 0, 0.8);
+ backdrop-filter: blur(8px);
  display: flex;
  flex-direction: column;
  justify-content: center;
@@ -41,36 +59,44 @@ body {
 }
 
 .win-message h2 {
- font-size: 36px;
+ font-size: 42px;
  margin-bottom: 20px;
+ background: linear-gradient(90deg, var(--accent), var(--primary));
+ -webkit-background-clip: text;
+ background-clip: text;
+ color: transparent;
+ text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .win-message p {
- font-size: 20px;
+ font-size: 22px;
  margin-bottom: 16px;
 }
 
 .win-message .new-record {
- color: #f1c40f;
+ color: #ffeaa7;
  font-weight: bold;
- font-size: 24px;
+ font-size: 28px;
+ animation: pulse 1.5s infinite;
 }
 
 .win-message button {
- margin-top: 24px;
- padding: 12px 24px;
- background-color: #2ecc71;
+ margin-top: 30px;
+ padding: 14px 32px;
+ background: linear-gradient(to right, var(--primary), var(--accent));
  color: white;
  border: none;
- border-radius: 4px;
+ border-radius: 30px;
  font-size: 18px;
+ font-weight: 600;
  cursor: pointer;
- transition: transform 0.2s, background-color 0.3s;
+ transition: transform 0.3s, box-shadow 0.3s;
+ box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
 }
 
 .win-message button:hover {
- background-color: #27ae60;
- transform: scale(1.05);
+ transform: translateY(-5px);
+ box-shadow: 0 10px 25px rgba(108, 92, 231, 0.6);
 }
 
 @keyframes fadeIn {
@@ -79,5 +105,17 @@ body {
  }
  to {
   opacity: 1;
+ }
+}
+
+@keyframes pulse {
+ 0% {
+  transform: scale(1);
+ }
+ 50% {
+  transform: scale(1.05);
+ }
+ 100% {
+  transform: scale(1);
  }
 }

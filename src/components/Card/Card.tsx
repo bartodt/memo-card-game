@@ -27,7 +27,7 @@ export const Card: React.FC<CardProps> = ({ card, onClick }) => {
  return (
   <div className={cardClasses} onClick={handleClick}>
    <div className="card-inner">
-    <div className="card-front">?</div>
+    <div className="card-front"></div>
     <div className="card-back">{value}</div>
    </div>
   </div>
