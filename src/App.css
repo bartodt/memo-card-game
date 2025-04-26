@@ -5,43 +5,116 @@
 }
 
 :root {
- /* Colores principales */
- --primary: #6c5ce7;
- --primary-light: #a29bfe;
- --secondary: #a29bfe;
- --accent: #00cec9;
- --light: #f8f9fa;
- --dark: #2d3436;
- --success: #00b894;
- --success-light: #a3f9c6;
- --error: #d63031;
- --error-light: #ff7675;
+ /* Theme toggle variable */
+ --is-dark-theme: 0; /* 0 for light theme, 1 for dark theme */
 
- /* Colores adicionales */
- --gold: #ffeaa7;
- --card-back: #dfe6e9;
+ /* Light theme colors */
+ --primary-light-theme: #4361ee;
+ --primary-light-light-theme: #4895ef;
+ --secondary-light-theme: #4cc9f0;
+ --accent-light-theme: #00b4d8;
+ --light-light-theme: #ffffff;
+ --dark-light-theme: #222222;
+ --success-light-theme: #06d6a0;
+ --success-light-light-theme: #a0f3dd;
+ --error-light-theme: #e63946;
+ --error-light-light-theme: #ff758f;
+ --gold-light-theme: #ffca3a;
+ --card-back-light-theme: #f8f9fa;
+ --background-start-light-theme: #4cc9f0;
+ --background-end-light-theme: #4361ee;
 
- /* Sombras */
+ /* Dark theme colors */
+ --primary-dark-theme: #4361ee;
+ --primary-light-dark-theme: #3f37c9;
+ --secondary-dark-theme: #4895ef;
+ --accent-dark-theme: #72efdd;
+ --light-dark-theme: #f8f9fa;
+ --dark-dark-theme: #121212;
+ --success-dark-theme: #06d6a0;
+ --success-light-dark-theme: #0acea2;
+ --error-dark-theme: #e63946;
+ --error-light-dark-theme: #fe5f55;
+ --gold-dark-theme: #ffd166;
+ --card-back-dark-theme: #2b2d42;
+ --background-start-dark-theme: #121212;
+ --background-end-dark-theme: #1f1f1f;
+
+ /* Dynamic theme colors (these will change based on theme) */
+ --primary: var(--primary-light-theme);
+ --primary-light: var(--primary-light-light-theme);
+ --secondary: var(--secondary-light-theme);
+ --accent: var(--accent-light-theme);
+ --light: var(--light-light-theme);
+ --dark: var(--dark-light-theme);
+ --success: var(--success-light-theme);
+ --success-light: var(--success-light-light-theme);
+ --error: var(--error-light-theme);
+ --error-light: var(--error-light-light-theme);
+ --gold: var(--gold-light-theme);
+ --card-back: var(--card-back-light-theme);
+ --background-start: var(--background-start-light-theme);
+ --background-end: var(--background-end-light-theme);
+
+ /* Shadows for light theme */
  --shadow-light: rgba(0, 0, 0, 0.1);
  --shadow-medium: rgba(0, 0, 0, 0.15);
  --shadow-dark: rgba(0, 0, 0, 0.2);
  --shadow-darker: rgba(0, 0, 0, 0.3);
  --shadow-modal: rgba(0, 0, 0, 0.8);
 
- /* Overlay */
- --overlay-light: rgba(255, 255, 255, 0.1);
- --overlay-medium: rgba(255, 255, 255, 0.2);
+ /* Overlay for light theme */
+ --overlay-light: rgba(255, 255, 255, 0.2);
+ --overlay-medium: rgba(255, 255, 255, 0.3);
 
- /* Tamaños */
+ /* Dark theme specific shadows and overlays */
+ --shadow-light-dark-theme: rgba(0, 0, 0, 0.2);
+ --shadow-medium-dark-theme: rgba(0, 0, 0, 0.25);
+ --shadow-dark-dark-theme: rgba(0, 0, 0, 0.3);
+ --shadow-darker-dark-theme: rgba(0, 0, 0, 0.4);
+ --overlay-dark-theme-light: rgba(255, 255, 255, 0.05);
+ --overlay-dark-theme-medium: rgba(255, 255, 255, 0.1);
+
+ /* Sizes */
  --card-size: 100px;
+}
+
+/* Dark theme class to be toggled */
+.dark-theme {
+ --is-dark-theme: 1;
+ --primary: var(--primary-dark-theme);
+ --primary-light: var(--primary-light-dark-theme);
+ --secondary: var(--secondary-dark-theme);
+ --accent: var(--accent-dark-theme);
+ --light: var(--light-dark-theme);
+ --dark: var(--dark-dark-theme);
+ --success: var(--success-dark-theme);
+ --success-light: var(--success-light-dark-theme);
+ --error: var(--error-dark-theme);
+ --error-light: var(--error-light-dark-theme);
+ --gold: var(--gold-dark-theme);
+ --card-back: var(--card-back-dark-theme);
+ --background-start: var(--background-start-dark-theme);
+ --background-end: var(--background-end-dark-theme);
+ --shadow-light: var(--shadow-light-dark-theme);
+ --shadow-medium: var(--shadow-medium-dark-theme);
+ --shadow-dark: var(--shadow-dark-dark-theme);
+ --shadow-darker: var(--shadow-darker-dark-theme);
+ --overlay-light: var(--overlay-dark-theme-light);
+ --overlay-medium: var(--overlay-dark-theme-medium);
 }
 
 body {
  font-family: "Poppins", "Segoe UI", "Roboto", sans-serif;
- background: linear-gradient(135deg, var(--primary), var(--secondary));
+ background: linear-gradient(
+  135deg,
+  var(--background-start),
+  var(--background-end)
+ );
  min-height: 100vh;
  color: var(--light);
  line-height: 1.6;
+ transition: background 0.5s ease;
 }
 
 .app {
@@ -58,6 +131,7 @@ body {
  border-radius: 16px;
  box-shadow: 0 8px 30px var(--shadow-dark);
  margin-top: 20px;
+ transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .win-message {
@@ -87,6 +161,7 @@ body {
  background-clip: text;
  color: transparent;
  text-shadow: 0 2px 10px var(--shadow-light);
+ transition: background 0.3s ease;
 }
 
 .win-message p {
@@ -99,6 +174,7 @@ body {
  font-weight: bold;
  font-size: 28px;
  animation: pulse 1.5s infinite;
+ transition: color 0.3s ease;
 }
 
 .win-message button {
@@ -111,13 +187,72 @@ body {
  font-size: 18px;
  font-weight: 600;
  cursor: pointer;
- transition: transform 0.3s, box-shadow 0.3s;
+ transition: transform 0.3s, box-shadow 0.3s, background 0.3s ease;
  box-shadow: 0 6px 20px var(--shadow-medium);
 }
 
 .win-message button:hover {
  transform: translateY(-5px);
  box-shadow: 0 10px 25px var(--shadow-dark);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+ position: absolute;
+ top: 20px;
+ right: 20px;
+ width: 50px;
+ height: 25px;
+ background-color: var(--dark);
+ border-radius: 30px;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 0 5px;
+ transition: background-color 0.3s ease;
+ z-index: 5;
+}
+
+/* Sun icon */
+.theme-toggle::before {
+ content: "☀️";
+ font-size: 12px;
+ position: relative;
+ left: -1px;
+}
+
+/* Moon icon */
+.theme-toggle > span {
+ content: "🌙";
+ font-size: 12px;
+ position: relative;
+ right: -1px;
+}
+
+.theme-toggle::after {
+ content: "";
+ position: absolute;
+ width: 18px;
+ height: 18px;
+ background-color: var(--light);
+ border-radius: 50%;
+ left: 4px;
+ transition: transform 0.3s ease, background-color 0.3s ease;
+ box-shadow: 0 2px 5px var(--shadow-dark);
+ transform: translateX(calc(var(--is-dark-theme) * 23px));
+}
+
+.theme-toggle:hover::after {
+ box-shadow: 0 0 8px 2px var(--primary);
+}
+
+.dark-theme .theme-toggle {
+ background-color: var(--light);
+}
+
+.dark-theme .theme-toggle::after {
+ background-color: var(--dark);
 }
 
 @keyframes fadeIn {

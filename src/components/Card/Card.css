@@ -23,7 +23,8 @@
 .card-inner {
  width: 100%;
  height: 100%;
- transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+ transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+  box-shadow 0.3s ease, border 0.3s ease;
  transform-style: preserve-3d;
  position: relative;
  border-radius: 12px;
@@ -92,6 +93,8 @@
  font-weight: bold;
  border-radius: 12px;
  user-select: none;
+ transition: background 0.3s ease, color 0.3s ease, border 0.3s ease,
+  box-shadow 0.3s ease;
 }
 
 .card-front {
@@ -111,7 +114,7 @@
  background: linear-gradient(135deg, var(--light), var(--card-back));
  color: var(--dark);
  transform: rotateY(180deg);
- border: 3px solid white;
+ border: 3px solid var(--light);
 }
 
 @media (max-width: 600px) {

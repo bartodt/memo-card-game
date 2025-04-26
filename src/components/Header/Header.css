@@ -6,6 +6,7 @@
  border-radius: 16px;
  margin-bottom: 25px;
  box-shadow: 0 10px 30px var(--shadow-medium);
+ transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .game-header h1 {
@@ -14,6 +15,7 @@
  font-weight: 700;
  text-shadow: 2px 2px 5px var(--shadow-dark);
  letter-spacing: 1px;
+ transition: text-shadow 0.3s ease;
 }
 
 .stats-container {
