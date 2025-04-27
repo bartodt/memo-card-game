@@ -1,0 +1,10 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project-Specific Rules (Memory Game)
+- Implement card shuffling with Fisher-Yates
+- Implement move counter increment on valid flips
+- Persist best score using LocalStorage
+- Reset game state without page reload

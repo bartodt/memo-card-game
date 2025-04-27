@@ -1,0 +1,12 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# React Best Practices
+- Use functional components and hooks only
+- Destructure props and state
+- Separate UI and logic (custom hooks)
+- Use useCallback/useMemo where relevant
+- No unnecessary re-renders (consider React.memo)
+- Clean up all side effects (timers, subscriptions)
