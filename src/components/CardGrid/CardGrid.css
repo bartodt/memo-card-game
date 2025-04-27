@@ -35,57 +35,6 @@
  }
 }
 
-/* Apply staggered animation to children */
-.card-grid > *:nth-child(1) {
- animation-delay: 0.1s;
-}
-.card-grid > *:nth-child(2) {
- animation-delay: 0.15s;
-}
-.card-grid > *:nth-child(3) {
- animation-delay: 0.2s;
-}
-.card-grid > *:nth-child(4) {
- animation-delay: 0.25s;
-}
-.card-grid > *:nth-child(5) {
- animation-delay: 0.3s;
-}
-.card-grid > *:nth-child(6) {
- animation-delay: 0.35s;
-}
-.card-grid > *:nth-child(7) {
- animation-delay: 0.4s;
-}
-.card-grid > *:nth-child(8) {
- animation-delay: 0.45s;
-}
-.card-grid > *:nth-child(9) {
- animation-delay: 0.5s;
-}
-.card-grid > *:nth-child(10) {
- animation-delay: 0.55s;
-}
-.card-grid > *:nth-child(11) {
- animation-delay: 0.6s;
-}
-.card-grid > *:nth-child(12) {
- animation-delay: 0.65s;
-}
-.card-grid > *:nth-child(13) {
- animation-delay: 0.7s;
-}
-.card-grid > *:nth-child(14) {
- animation-delay: 0.75s;
-}
-.card-grid > *:nth-child(15) {
- animation-delay: 0.8s;
-}
-.card-grid > *:nth-child(16) {
- animation-delay: 0.85s;
-}
-
-/* Sound effect for card dealing (subtle visual cue) */
 .card-grid > *::after {
  content: "";
  position: absolute;
@@ -99,6 +48,7 @@
  pointer-events: none;
  z-index: 2;
  animation: cardSound 0.2s ease-out forwards;
+ animation-delay: var(--card-sound-delay);
 }
 
 @keyframes cardSound {
@@ -108,55 +58,6 @@
  100% {
   opacity: 0;
  }
-}
-
-.card-grid > *:nth-child(1)::after {
- animation-delay: 0.1s;
-}
-.card-grid > *:nth-child(2)::after {
- animation-delay: 0.15s;
-}
-.card-grid > *:nth-child(3)::after {
- animation-delay: 0.2s;
-}
-.card-grid > *:nth-child(4)::after {
- animation-delay: 0.25s;
-}
-.card-grid > *:nth-child(5)::after {
- animation-delay: 0.3s;
-}
-.card-grid > *:nth-child(6)::after {
- animation-delay: 0.35s;
-}
-.card-grid > *:nth-child(7)::after {
- animation-delay: 0.4s;
-}
-.card-grid > *:nth-child(8)::after {
- animation-delay: 0.45s;
-}
-.card-grid > *:nth-child(9)::after {
- animation-delay: 0.5s;
-}
-.card-grid > *:nth-child(10)::after {
- animation-delay: 0.55s;
-}
-.card-grid > *:nth-child(11)::after {
- animation-delay: 0.6s;
-}
-.card-grid > *:nth-child(12)::after {
- animation-delay: 0.65s;
-}
-.card-grid > *:nth-child(13)::after {
- animation-delay: 0.7s;
-}
-.card-grid > *:nth-child(14)::after {
- animation-delay: 0.75s;
-}
-.card-grid > *:nth-child(15)::after {
- animation-delay: 0.8s;
-}
-.card-grid > *:nth-child(16)::after {
- animation-delay: 0.85s;
 }
 
 @media (max-width: 768px) {

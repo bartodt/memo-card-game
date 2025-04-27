@@ -36,14 +36,26 @@ export const CardGrid: React.FC<CardGridProps> = ({
   return prevCards.every((card, index) => card.id === currentCards[index].id);
  };
 
+ const getCardStyles = (index: number): React.CSSProperties => {
+  const baseDelay = 0.1;
+  const incrementPerCard = 0.05;
+  const delay = baseDelay + index * incrementPerCard;
+
+  return {
+   animationDelay: `${delay}s`,
+   "--card-sound-delay": `${delay}s`,
+  } as React.CSSProperties;
+ };
+
  return (
   <div className="card-grid" key={key}>
-   {cards.map((card) => (
+   {cards.map((card, index) => (
     <CardComponent
      key={card.id}
      card={card}
      onClick={onCardClick}
      isGameReady={isGameReady}
+     style={getCardStyles(index)}
     />
    ))}
   </div>

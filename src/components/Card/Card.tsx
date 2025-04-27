@@ -6,12 +6,14 @@ interface CardProps {
  card: CardType;
  onClick: (id: number) => void;
  isGameReady?: boolean;
+ style?: React.CSSProperties;
 }
 
 export const Card: React.FC<CardProps> = ({
  card,
  onClick,
  isGameReady = true,
+ style,
 }) => {
  const { id, isFlipped, isMatched, value } = card;
 
@@ -31,7 +33,7 @@ export const Card: React.FC<CardProps> = ({
   .join(" ");
 
  return (
-  <div className={cardClasses} onClick={handleClick}>
+  <div className={cardClasses} onClick={handleClick} style={style}>
    <div className="card-inner">
     <div className="card-front"></div>
     <div className="card-back">{value}</div>

@@ -2,7 +2,6 @@
 @import "./styles/global.css";
 
 /* Import component styles */
-@import "./components/App/App.css";
 @import "./components/ThemeToggle/ThemeToggle.css";
 
 .app {
