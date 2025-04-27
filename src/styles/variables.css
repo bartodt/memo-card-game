@@ -1,0 +1,99 @@
+:root {
+ /* Theme toggle variable */
+ --is-dark-theme: 0; /* 0 for light theme, 1 for dark theme */
+
+ /* Light theme colors */
+ --primary-light-theme: #3498db; /* Bright blue */
+ --primary-light-light-theme: #5dade2; /* Lighter blue */
+ --secondary-light-theme: #9b59b6; /* Purple */
+ --accent-light-theme: #1abc9c; /* Turquoise */
+ --light-light-theme: #f5f5f5; /* Off-white */
+ --dark-light-theme: #2c3e50; /* Dark navy */
+ --success-light-theme: #2ecc71; /* Green */
+ --success-light-light-theme: #a3e4c9; /* Light green */
+ --error-light-theme: #e74c3c; /* Red */
+ --error-light-light-theme: #f5b7b1; /* Light red */
+ --gold-light-theme: #f1c40f; /* Yellow gold */
+ --card-back-light-theme: #ffffff; /* White */
+ --background-start-light-theme: #ecf0f1; /* Very light gray */
+ --background-end-light-theme: #bdc3c7; /* Light gray */
+
+ /* Dark theme colors */
+ --primary-dark-theme: #3498db; /* Bright blue - keeping same primary for consistency */
+ --primary-light-dark-theme: #2980b9; /* Darker blue */
+ --secondary-dark-theme: #8e44ad; /* Darker purple */
+ --accent-dark-theme: #16a085; /* Darker turquoise */
+ --light-dark-theme: #ecf0f1; /* Light gray */
+ --dark-dark-theme: #1a1a1a; /* Almost black */
+ --success-dark-theme: #27ae60; /* Darker green */
+ --success-light-dark-theme: #2ecc71; /* Green */
+ --error-dark-theme: #c0392b; /* Darker red */
+ --error-light-dark-theme: #e74c3c; /* Red */
+ --gold-dark-theme: #f39c12; /* Darker gold */
+ --card-back-dark-theme: #2c3e50; /* Dark navy */
+ --background-start-dark-theme: #121212; /* Very dark gray */
+ --background-end-dark-theme: #2c3e50; /* Dark navy */
+
+ /* Dynamic theme colors (these will change based on theme) */
+ --primary: var(--primary-light-theme);
+ --primary-light: var(--primary-light-light-theme);
+ --secondary: var(--secondary-light-theme);
+ --accent: var(--accent-light-theme);
+ --light: var(--light-light-theme);
+ --dark: var(--dark-light-theme);
+ --success: var(--success-light-theme);
+ --success-light: var(--success-light-light-theme);
+ --error: var(--error-light-theme);
+ --error-light: var(--error-light-light-theme);
+ --gold: var(--gold-light-theme);
+ --card-back: var(--card-back-light-theme);
+ --background-start: var(--background-start-light-theme);
+ --background-end: var(--background-end-light-theme);
+
+ /* Shadows for light theme */
+ --shadow-light: rgba(44, 62, 80, 0.1); /* Dark navy with opacity */
+ --shadow-medium: rgba(44, 62, 80, 0.15); /* Dark navy with opacity */
+ --shadow-dark: rgba(44, 62, 80, 0.2); /* Dark navy with opacity */
+ --shadow-darker: rgba(44, 62, 80, 0.3); /* Dark navy with opacity */
+ --shadow-modal: rgba(44, 62, 80, 0.8); /* Dark navy with opacity */
+
+ /* Overlay for light theme */
+ --overlay-light: rgba(255, 255, 255, 0.2); /* White with opacity */
+ --overlay-medium: rgba(255, 255, 255, 0.3); /* White with opacity */
+
+ /* Dark theme specific shadows and overlays */
+ --shadow-light-dark-theme: rgba(0, 0, 0, 0.2);
+ --shadow-medium-dark-theme: rgba(0, 0, 0, 0.25);
+ --shadow-dark-dark-theme: rgba(0, 0, 0, 0.3);
+ --shadow-darker-dark-theme: rgba(0, 0, 0, 0.4);
+ --overlay-dark-theme-light: rgba(255, 255, 255, 0.05);
+ --overlay-dark-theme-medium: rgba(255, 255, 255, 0.1);
+
+ /* Sizes */
+ --card-size: 100px;
+}
+
+/* Dark theme class to be toggled */
+.dark-theme {
+ --is-dark-theme: 1;
+ --primary: var(--primary-dark-theme);
+ --primary-light: var(--primary-light-dark-theme);
+ --secondary: var(--secondary-dark-theme);
+ --accent: var(--accent-dark-theme);
+ --light: var(--light-dark-theme);
+ --dark: var(--dark-dark-theme);
+ --success: var(--success-dark-theme);
+ --success-light: var(--success-light-dark-theme);
+ --error: var(--error-dark-theme);
+ --error-light: var(--error-light-dark-theme);
+ --gold: var(--gold-dark-theme);
+ --card-back: var(--card-back-dark-theme);
+ --background-start: var(--background-start-dark-theme);
+ --background-end: var(--background-end-dark-theme);
+ --shadow-light: var(--shadow-light-dark-theme);
+ --shadow-medium: var(--shadow-medium-dark-theme);
+ --shadow-dark: var(--shadow-dark-dark-theme);
+ --shadow-darker: var(--shadow-darker-dark-theme);
+ --overlay-light: var(--overlay-dark-theme-light);
+ --overlay-medium: var(--overlay-dark-theme-medium);
+}
