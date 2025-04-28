@@ -6,7 +6,7 @@ export const useDarkMode = () => {
   if (savedTheme !== null) {
    return savedTheme === "true";
   }
-  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  return true;
  });
 
  useEffect(() => {

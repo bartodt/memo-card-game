@@ -50,7 +50,7 @@ export function useMemoryGame({
   const dealingCompleteTime = (lastCardDelay + dealAnimationDuration) * 1000;
 
   // 2. Time to show the flipped cards showing their values
-  const previewDuration = 3000; // 3 seconds
+  const previewDuration = 5000; // 5 seconds
 
   // Step 1: Wait for the deal animation to complete
   setTimeout(() => {

@@ -20,12 +20,12 @@ export const App: React.FC = () => {
   resetGame,
  } = useMemoryGame({ totalPairs: TOTAL_PAIRS });
 
- const { isDarkTheme, toggleTheme } = useDarkMode();
+ const { toggleTheme } = useDarkMode();
 
  return (
   <div className="app">
    <AnimatedBackground />
-   <ThemeToggle isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
+   <ThemeToggle toggleTheme={toggleTheme} />
 
    <Header
     moves={moves}
