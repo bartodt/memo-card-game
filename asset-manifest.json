@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/memo-card-game/static/css/main.ab54f36b.css",
-    "main.js": "/memo-card-game/static/js/main.a4eea737.js",
+    "main.css": "/memo-card-game/static/css/main.9ff6bdda.css",
+    "main.js": "/memo-card-game/static/js/main.a50088b8.js",
     "index.html": "/memo-card-game/index.html",
-    "main.ab54f36b.css.map": "/memo-card-game/static/css/main.ab54f36b.css.map",
-    "main.a4eea737.js.map": "/memo-card-game/static/js/main.a4eea737.js.map"
+    "main.9ff6bdda.css.map": "/memo-card-game/static/css/main.9ff6bdda.css.map",
+    "main.a50088b8.js.map": "/memo-card-game/static/js/main.a50088b8.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab54f36b.css",
-    "static/js/main.a4eea737.js"
+    "static/css/main.9ff6bdda.css",
+    "static/js/main.a50088b8.js"
   ]
 }
