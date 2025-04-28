@@ -5,6 +5,7 @@
  cursor: pointer;
  position: relative;
  transition: transform 0.2s;
+ margin: auto;
 }
 
 .memory-card:hover {
@@ -64,7 +65,12 @@
 }
 
 .memory-card.matched .card-back {
- background: linear-gradient(135deg, var(--success), var(--success-light));
+ background: linear-gradient(
+  135deg,
+  var(--success),
+  var(--success-light)
+ ) !important;
+ color: white !important;
  animation: colorPulse 3s infinite;
 }
 
@@ -93,8 +99,6 @@
  font-weight: bold;
  border-radius: 12px;
  user-select: none;
- transition: background 0.3s ease, color 0.3s ease, border 0.3s ease,
-  box-shadow 0.3s ease;
 }
 
 .card-front {
@@ -115,6 +119,36 @@
  color: var(--dark);
  transform: rotateY(180deg);
  border: 3px solid var(--light);
+ opacity: 1;
+}
+
+.memory-card.flipped .card-back {
+ opacity: 1;
+}
+
+.card-value {
+ display: block;
+ opacity: 1;
+ transform: rotateY(0deg);
+ transition: none;
+ will-change: auto;
+ font-size: 28px;
+ text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .card-back {
+ background: linear-gradient(135deg, #2c2c2c, #2c3e50);
+ color: white;
+ border: 2px solidwhite;
+}
+
+.dark-theme .memory-card.matched .card-back {
+ background: linear-gradient(
+  135deg,
+  var(--success-dark-theme),
+  var(--success-light-dark-theme)
+ ) !important;
+ color: white !important;
 }
 
 @media (max-width: 600px) {
@@ -124,5 +158,9 @@
 
  .card-front::after {
   font-size: 28px;
+ }
+
+ .card-value {
+  font-size: 22px;
  }
 }

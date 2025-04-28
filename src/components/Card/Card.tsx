@@ -36,7 +36,9 @@ export const Card: React.FC<CardProps> = ({
   <div className={cardClasses} onClick={handleClick} style={style}>
    <div className="card-inner">
     <div className="card-front"></div>
-    <div className="card-back">{value}</div>
+    <div className="card-back">
+     <span className="card-value">{value}</span>
+    </div>
    </div>
   </div>
  );

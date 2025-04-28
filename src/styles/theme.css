@@ -3,36 +3,36 @@
  --is-dark-theme: 0; /* 0 for light theme, 1 for dark theme */
 
  /* Light theme colors */
- --primary-light-theme: #3498db; /* Bright blue */
- --primary-light-light-theme: #5dade2; /* Lighter blue */
- --secondary-light-theme: #9b59b6; /* Purple */
- --accent-light-theme: #1abc9c; /* Turquoise */
- --light-light-theme: #f5f5f5; /* Off-white */
- --dark-light-theme: #2c3e50; /* Dark navy */
- --success-light-theme: #2ecc71; /* Green */
- --success-light-light-theme: #a3e4c9; /* Light green */
- --error-light-theme: #e74c3c; /* Red */
- --error-light-light-theme: #f5b7b1; /* Light red */
- --gold-light-theme: #f1c40f; /* Yellow gold */
- --card-back-light-theme: #ffffff; /* White */
- --background-start-light-theme: #ecf0f1; /* Very light gray */
- --background-end-light-theme: #bdc3c7; /* Light gray */
+ --primary-light-theme: #3498db;
+ --primary-light-light-theme: #5dade2;
+ --secondary-light-theme: #9b59b6;
+ --accent-light-theme: #1abc9c;
+ --light-light-theme: #f5f5f5;
+ --dark-light-theme: #2c3e50;
+ --success-light-theme: #2ecc71;
+ --success-light-light-theme: #a3e4c9;
+ --error-light-theme: #e74c3c;
+ --error-light-light-theme: #f5b7b1;
+ --gold-light-theme: #f1c40f;
+ --card-back-light-theme: #ffffff;
+ --background-start-light-theme: #ecf0f1;
+ --background-end-light-theme: #bdc3c7;
 
  /* Dark theme colors */
- --primary-dark-theme: #3498db; /* Bright blue - keeping same primary for consistency */
- --primary-light-dark-theme: #2980b9; /* Darker blue */
- --secondary-dark-theme: #8e44ad; /* Darker purple */
- --accent-dark-theme: #16a085; /* Darker turquoise */
- --light-dark-theme: #ecf0f1; /* Light gray */
- --dark-dark-theme: #1a1a1a; /* Almost black */
- --success-dark-theme: #27ae60; /* Darker green */
- --success-light-dark-theme: #2ecc71; /* Green */
- --error-dark-theme: #c0392b; /* Darker red */
- --error-light-dark-theme: #e74c3c; /* Red */
- --gold-dark-theme: #f39c12; /* Darker gold */
- --card-back-dark-theme: #2c3e50; /* Dark navy */
- --background-start-dark-theme: #121212; /* Very dark gray */
- --background-end-dark-theme: #2c3e50; /* Dark navy */
+ --primary-dark-theme: #3498db;
+ --primary-light-dark-theme: #2980b9;
+ --secondary-dark-theme: #8e44ad;
+ --accent-dark-theme: #16a085;
+ --light-dark-theme: #ecf0f1;
+ --dark-dark-theme: #1a1a1a;
+ --success-dark-theme: #27ae60;
+ --success-light-dark-theme: #2ecc71;
+ --error-dark-theme: #c0392b;
+ --error-light-dark-theme: #e74c3c;
+ --gold-dark-theme: #f39c12;
+ --card-back-dark-theme: #2c3e50;
+ --background-start-dark-theme: #121212;
+ --background-end-dark-theme: #2c3e50;
 
  /* Dynamic theme colors (these will change based on theme) */
  --primary: var(--primary-light-theme);
@@ -51,15 +51,15 @@
  --background-end: var(--background-end-light-theme);
 
  /* Shadows for light theme */
- --shadow-light: rgba(44, 62, 80, 0.1); /* Dark navy with opacity */
- --shadow-medium: rgba(44, 62, 80, 0.15); /* Dark navy with opacity */
- --shadow-dark: rgba(44, 62, 80, 0.2); /* Dark navy with opacity */
- --shadow-darker: rgba(44, 62, 80, 0.3); /* Dark navy with opacity */
- --shadow-modal: rgba(44, 62, 80, 0.8); /* Dark navy with opacity */
+ --shadow-light: rgba(44, 62, 80, 0.1);
+ --shadow-medium: rgba(44, 62, 80, 0.15);
+ --shadow-dark: rgba(44, 62, 80, 0.2);
+ --shadow-darker: rgba(44, 62, 80, 0.3);
+ --shadow-modal: rgba(44, 62, 80, 0.8);
 
  /* Overlay for light theme */
- --overlay-light: rgba(255, 255, 255, 0.2); /* White with opacity */
- --overlay-medium: rgba(255, 255, 255, 0.3); /* White with opacity */
+ --overlay-light: rgba(255, 255, 255, 0.2);
+ --overlay-medium: rgba(255, 255, 255, 0.3);
 
  /* Dark theme specific shadows and overlays */
  --shadow-light-dark-theme: rgba(0, 0, 0, 0.2);
