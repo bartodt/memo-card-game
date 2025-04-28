@@ -20,7 +20,6 @@ export const App: React.FC = () => {
   resetGame,
  } = useMemoryGame({ totalPairs: TOTAL_PAIRS });
 
- // Use the dark mode hook
  const { isDarkTheme, toggleTheme } = useDarkMode();
 
  return (
