@@ -1,0 +1,11 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Architecture Rules
+- Utilities must be pure functions
+- Abstract LocalStorage access
+- No magic numbers/strings: define constants
+- Keep business logic outside of UI
+- Small, focused components (<200 LOC)

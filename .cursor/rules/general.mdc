@@ -1,0 +1,11 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# General Rules
+- Write clean, production-grade React code.
+- Prioritize readability and maintainability over cleverness.
+- Prefer TypeScript with strict types
+- No inline styles unless absolutely necessary.
+- Ensure mobile-first responsive design.

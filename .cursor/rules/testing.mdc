@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Testing Rules
+- Write minimal unit tests for key logic (e.g., shuffleArray, useMemoryGame)
+- Prefer Testing Library and Jest
+- Keep tests simple and focused on behavior
