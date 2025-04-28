@@ -1,3 +1,9 @@
+/**
+ * Card Grid Component Styles
+ * Manages the layout and animations of the memory game grid
+ */
+
+/* ===== GRID LAYOUT ===== */
 .card-grid {
  display: grid;
  grid-template-columns: repeat(4, 1fr);
@@ -10,6 +16,7 @@
  overflow: hidden;
 }
 
+/* ===== CARD DEALING ANIMATION ===== */
 .card-grid > * {
  opacity: 0;
  animation: dealCard 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
@@ -33,6 +40,7 @@
  }
 }
 
+/* ===== CCARD PLACEMENT FLASH ===== */
 .card-grid > *::after {
  content: "";
  position: absolute;
@@ -45,11 +53,11 @@
  border-radius: 12px;
  pointer-events: none;
  z-index: 2;
- animation: cardSound 0.2s ease-out forwards;
+ animation: cardPlacementFlash 0.2s ease-out forwards;
  animation-delay: var(--card-sound-delay);
 }
 
-@keyframes cardSound {
+@keyframes cardPlacementFlash {
  0% {
   opacity: 0.4;
  }
@@ -58,6 +66,7 @@
  }
 }
 
+/* ===== RESPONSIVE LAYOUTS ===== */
 @media (max-width: 768px) {
  .card-grid {
   grid-template-columns: repeat(4, 1fr);

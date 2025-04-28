@@ -1,3 +1,9 @@
+/**
+ * Memory Card Component Styles
+ * Organized by card state and functionality
+ */
+
+/* ===== BASIC CARD STYLES ===== */
 .memory-card {
  width: var(--card-size);
  height: var(--card-size);
@@ -6,29 +12,6 @@
  position: relative;
  transition: transform 0.2s;
  margin: auto;
-}
-
-/* Hover para cartas en estado normal */
-.memory-card:not(.flipped):hover {
- transform: translateY(-5px) scale(1.05);
- box-shadow: 0 15px 30px var(--shadow-dark);
- transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-  box-shadow 0.3s ease;
-}
-
-/* Hover para cartas volteadas */
-.memory-card.flipped:hover {
- transform: translateY(-5px);
- transition: transform 0.3s ease;
-}
-
-.memory-card.disabled {
- cursor: default;
- pointer-events: none;
-}
-
-.memory-card.disabled:hover {
- transform: none;
 }
 
 .card-inner {
@@ -78,15 +61,62 @@
  border: 3px solid var(--light);
 }
 
-.memory-card.flipped .card-inner {
- transform: rotateY(180deg);
-}
-
 .card-value {
  font-size: 28px;
  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+/* ===== CARD STATES ===== */
+/* Flipped State */
+.memory-card.flipped .card-inner {
+ transform: rotateY(180deg);
+}
+
+/* Hover effect for cards in normal state */
+.memory-card:not(.flipped):hover {
+ transform: translateY(-5px) scale(1.05);
+ box-shadow: 0 15px 30px var(--shadow-dark);
+ transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+  box-shadow 0.3s ease;
+}
+
+/* Hover effect for flipped cards */
+.memory-card.flipped:hover {
+ transform: translateY(-5px);
+ transition: transform 0.3s ease;
+}
+
+/* Glowing border effect on hover */
+.memory-card:not(.matched):hover .card-inner::after {
+ content: "";
+ position: absolute;
+ top: -2px;
+ left: -2px;
+ right: -2px;
+ bottom: -2px;
+ border: 2px solid rgba(255, 255, 255, 0.6);
+ border-radius: 14px;
+ animation: pulseBorder 1.5s infinite;
+ pointer-events: none;
+}
+
+/* Active state (click effect) */
+.memory-card:active:not(.flipped):not(.matched) {
+ transform: scale(0.95);
+ transition: transform 0.1s;
+}
+
+/* Disabled state */
+.memory-card.disabled {
+ cursor: default;
+ pointer-events: none;
+}
+
+.memory-card.disabled:hover {
+ transform: none;
+}
+
+/* ===== MATCHED CARDS ===== */
 .memory-card.matched .card-inner {
  transform: none;
  box-shadow: 0 0 15px var(--success);
@@ -95,7 +125,7 @@
  overflow: hidden;
 }
 
-/* Estilos para cartas emparejadas */
+/* Styles for matched cards */
 .memory-card.matched .card-front {
  display: none;
 }
@@ -165,7 +195,7 @@
  }
 }
 
-/* Efecto de borde brillante */
+/* Glowing border effect */
 .memory-card:not(.matched):hover .card-inner::after {
  content: "";
  position: absolute;
@@ -194,7 +224,7 @@
  }
 }
 
-/* Animación para coincidencias incorrectas */
+/* Animation for incorrect matches */
 .memory-card.shake:not(.matched) {
  animation: shakeCard 0.5s;
 }
@@ -212,10 +242,4 @@
  80% {
   transform: translateX(5px);
  }
-}
-
-/* Efecto de escala al hacer click */
-.memory-card:active:not(.flipped):not(.matched) {
- transform: scale(0.95);
- transition: transform 0.1s;
 }
