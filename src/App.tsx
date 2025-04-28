@@ -6,6 +6,7 @@ import { AnimatedBackground } from "./components/AnimatedBackground/AnimatedBack
 import { useMemoryGame } from "./hooks/useMemoryGame";
 import { useDarkMode } from "./hooks/useDarkMode";
 import "./App.css";
+import { WinModal } from "./components/WinModal/WinModal";
 
 const TOTAL_PAIRS = 8;
 
@@ -21,6 +22,8 @@ export const App: React.FC = () => {
  } = useMemoryGame({ totalPairs: TOTAL_PAIRS });
 
  const { toggleTheme } = useDarkMode();
+
+ const userWon = matchedPairs === TOTAL_PAIRS;
 
  return (
   <div className="app">
@@ -43,15 +46,8 @@ export const App: React.FC = () => {
     />
    </main>
 
-   {matchedPairs === TOTAL_PAIRS && matchedPairs > 0 && (
-    <div className="win-message">
-     <h2>Congratulations! 🎉</h2>
-     <p>You completed the game in {moves} moves.</p>
-     {bestScore !== null && moves <= bestScore && (
-      <p className="new-record">That's a new record!</p>
-     )}
-     <button onClick={resetGame}>Play Again</button>
-    </div>
+   {userWon && (
+    <WinModal moves={moves} bestScore={bestScore} resetGame={resetGame} />
    )}
   </div>
  );
