@@ -2,6 +2,7 @@ import React from "react";
 import { Header } from "./components/Header/Header";
 import { CardGrid } from "./components/CardGrid/CardGrid";
 import { ThemeToggle } from "./components/ThemeToggle/ThemeToggle";
+import { AnimatedBackground } from "./components/AnimatedBackground/AnimatedBackground";
 import { useMemoryGame } from "./hooks/useMemoryGame";
 import { useDarkMode } from "./hooks/useDarkMode";
 import "./App.css";
@@ -24,6 +25,7 @@ export const App: React.FC = () => {
 
  return (
   <div className="app">
+   <AnimatedBackground />
    <ThemeToggle isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
 
    <Header
