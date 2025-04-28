@@ -10,7 +10,7 @@
 }
 
 .game-header h1 {
- margin: 0 0 20px 0;
+ margin: 20px 0 20px 0;
  font-size: 36px;
  font-weight: 700;
  text-shadow: 2px 2px 5px var(--shadow-dark);
@@ -56,7 +56,7 @@
 }
 
 .reset-button {
- background: linear-gradient(to right, var(--error), var(--error-light));
+ background: linear-gradient(to right, var(--error));
  color: white;
  border: none;
  padding: 12px 25px;
